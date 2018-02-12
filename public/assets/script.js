@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var WIDTH = 800;
 var HEIGHT = 600;
@@ -8,8 +8,15 @@ var light = void 0;
 var ambient = void 0;
 var hsGeoGruoup = new THREE.Group();;
 
-// レンダラー
-var renderer = new THREE.WebGLRenderer({
+var colorConf = {
+	'0': '#ff0000',
+	'1': '#f0f000',
+	'2': '#00e000',
+	'3': '#00ffff',
+	'4': '#0000ff'
+
+	// レンダラー
+};var renderer = new THREE.WebGLRenderer({
 	preserveDrawingBuffer: true
 });
 renderer.setSize(WIDTH, HEIGHT);
@@ -39,6 +46,7 @@ var modelPath = '../src/data/hs300k.json';
 var model_hs = void 0;
 var model_pn = void 0;
 var mesh;
+var plane = {};
 
 loader.load(modelPath, function (geo, mat) {
 	var geometry = geo;
@@ -59,30 +67,22 @@ loader.load(modelPath, function (geo, mat) {
 	model_hs.material.opacity = 0.01;
 	model_hs.material.transparent = true;
 
-	var p_geometry = new THREE.PlaneGeometry(0.3, 0.2, 1);
-	var plane = {};
+	var p_geometry = new THREE.PlaneGeometry(0.15, 0.2, 0.1);
 
 	// ハンドスピナーとLEDライト５個をグループに
 	// let hsGeoGruoup = new THREE.Group();
 	hsGeoGruoup.add(model_hs);
 
-	var colorConf = {
-		'0': '#ff0000',
-		'1': '#f0f000',
-		'2': '#00e000',
-		'3': '#00ffff',
-		'4': '#0000ff'
-	};
-
 	for (var i = 0; i < 5; i++) {
-		//色を変更するため、マテリアルはfor文内で設定
 		var p_material = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide });
 		plane[i] = new THREE.Mesh(p_geometry, p_material);
-		plane[i].material.color = new THREE.Color(colorConf[i]);
+
 		//平面の位置を少しずつずらす。
-		plane[i].position.y = 0.5 * i;
+		plane[i].position.z = 0.13 * i + 1.5;
 		//画面に対する奥行き方向は変更なしで2
-		plane[i].position.z = 1.6;
+		plane[i].position.y = 1.6;
+
+		plane[i].material.color = new THREE.Color(colorConf[i]);
 
 		// 先ほどのboxをグループに追加
 		hsGeoGruoup.add(plane[i]);
@@ -109,19 +109,29 @@ loader.load(modelPath, function (geo, mat) {
 	main();
 });
 
+var count = 0;
+
 function main() {
 
 	//cameraの位置を設定
 	camera.position.set(0, 7, 0);
 	camera.lookAt({ x: 0, y: 0, z: 0 });
 
-	// model_hs.rotation.y +=.06;
-	hsGeoGruoup.rotation.y += 0.23;
-	//hsGeoGruoup.rotation.y += 5.9*(2*3.14 /40) ;
-
+	//hsGeoGruoup.rotation.y += 0.23 ;
+	hsGeoGruoup.rotation.y += 2 * Math.PI / 60;
 
 	// model_hs.position.y += (Math.sin(r_radian) - Math.sin(r_radian-0.01))*8;
 	// model_pn.position.y += (Math.sin(r_radian) - Math.sin(r_radian-0.01))*8;
+
+	// 色変え
+	for (var j = 0; j < 5; j++) {
+		if (count % 2 == 0) {
+			plane[j].material.color = new THREE.Color(colorConf[j]);
+		} else {
+			plane[j].material.color = new THREE.Color(colorConf[j + 1]);
+		}
+	}
+	count++;
 
 	renderer.render(scene_bg, camera_bg);
 	renderer.render(scene, camera);
