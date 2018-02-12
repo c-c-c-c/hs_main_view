@@ -5,7 +5,7 @@ let c_radian = 0;
 let r_radian = 0;
 let light;
 let ambient;
-var hsGeoGruoup;
+var hsGeoGruoup = new THREE.Group();;
 
 // レンダラー
 let renderer = new THREE.WebGLRenderer({
@@ -59,36 +59,40 @@ loader.load(modelPath, (geo, mat) => {
 	model_hs.material.opacity =0.01;
 	model_hs.material.transparent = true;
 
-	let p_geometry = new THREE.PlaneGeometry( 0.3, 0.1, 1 );
-	let p_material = new THREE.MeshBasicMaterial( {color: 0xff0000, side: THREE.DoubleSide} );
-	let plane = new THREE.Mesh( p_geometry, p_material );
-  plane.rotation.x =1.6;
-  plane.position.y =0.6;
-  plane.position.z =2;
-  // plane.position.x =2;
+	let p_geometry = new THREE.PlaneGeometry( 0.3, 0.2, 1 );
+	let plane = {};
 
-	hsGeoGruoup = new THREE.Group();
-    // 先ほどのboxをグループに追加
-  hsGeoGruoup.add(plane);
-  //hsGeoGruoup.add(model_pn);
-  hsGeoGruoup.add(model_hs);
+	// ハンドスピナーとLEDライト５個をグループに
+	// let hsGeoGruoup = new THREE.Group();
+	hsGeoGruoup.add(model_hs);
+
+	const colorConf =  {
+		'0': '#ff0000',
+		'1': '#f0f000',
+		'2': '#00e000',
+		'3': '#00ffff',
+		'4': '#0000ff',
+	}
+
+	for (let i=0;i < 5; i++) {
+		//色を変更するため、マテリアルはfor文内で設定
+		let p_material = new THREE.MeshBasicMaterial( { side: THREE.DoubleSide} );
+		plane[i] = new THREE.Mesh( p_geometry, p_material );
+		plane[i].material.color = new THREE.Color(colorConf[i]);
+		//平面の位置を少しずつずらす。
+		plane[i].position.y =0.5*i;
+		//画面に対する奥行き方向は変更なしで2
+		plane[i].position.z =1.6;
+
+
+
+
+	  // 先ほどのboxをグループに追加
+	  hsGeoGruoup.add(plane[i]);
+	  //hsGeoGruoup.add(model_pn);
+	}
+
 	scene.add( hsGeoGruoup );
-
-	//scene.add(model_hs);　　
-	//scene.add(model_pn);　　
-
-
-  // var box = new THREE.BoxGeometry(2, 2, 2);
-  // var mat = new THREE.MeshBasicMaterial({
-  //   color: 0xffffff,
-  //   wireframe: true
-  // });
-  // mesh = new THREE.Mesh(box, mat);
-  // scene.add(mesh);
-
-
-  // 背景オブジェクト用のシーンとメッシュ
-
 
 
   var bg_geometry = new THREE.PlaneGeometry(WIDTH, HEIGHT, 10, 10);
@@ -114,13 +118,18 @@ loader.load(modelPath, (geo, mat) => {
 
 function main() {
 
-	r_radian += 0.01;
 
 	//cameraの位置を設定
 	camera.position.set(0, 7, 0);
 	camera.lookAt({x:0, y:0, z:0 });
+
+
   // model_hs.rotation.y +=.06;
-   hsGeoGruoup.rotation.y += 5.9*(2*3.14 /40) ;
+  hsGeoGruoup.rotation.y += 0.23 ;
+  //hsGeoGruoup.rotation.y += 5.9*(2*3.14 /40) ;
+
+
+
 	// model_hs.position.y += (Math.sin(r_radian) - Math.sin(r_radian-0.01))*8;
 	// model_pn.position.y += (Math.sin(r_radian) - Math.sin(r_radian-0.01))*8;
 
