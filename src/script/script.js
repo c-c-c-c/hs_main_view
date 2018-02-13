@@ -148,17 +148,27 @@ function main() {
   requestAnimationFrame(main);
 }
 
+var colorTermData ={};
 
 $(function () {
   $('#exe_btn').click(function() {
     // 分母
-    console.log('分母：');
-    console.log($('.how_often_bunbo').val());  // 結果：山田太郎
+		$('.form_container').each(function(index, element){
+			let term_id = $(this).attr("id");
+			colorTermData[term_id] = {
+				'which_led'
+					: $('#'+term_id+' .which_led').val(),
+				'how_often_bunbo'
+					: $('#'+ term_id+' .how_often_bunbo').val(),
+				'how_often_bunshi'
+					: $('#'+ term_id+' .how_often_bunshi').val(),
+				'led_color'
+					: $('#'+ term_id+' .led_color').val()
+			};
 
-    // 分子
-    console.log('分子：');
-    console.log($('.how_often_bunshi').val());  // 結果：山田太郎
 
+		});
 
+		console.log(colorTermData);
   })
 });

@@ -54,58 +54,105 @@
 testaa
 
 
-<form id="term1">
-<div class="form_container">
-<div class="box_selection">
-	<select name="which_led">
-		<option value="led_a">LED[A]</option>
-		<option value="led_b">LED[B]</option>
-		<option value="led_c">LED[C]</option>
-		<option value="led_d">LED[D]</option>
-		<option value="led_e">LED[E]</option>
-	</select>
-</div>
+<div id="term1" class="form_container">
+	<div class="box_selection">
+		<select class="which_led" name="which_led">
+			<option value="led_a">LED[A]</option>
+			<option value="led_b">LED[B]</option>
+			<option value="led_c">LED[C]</option>
+			<option value="led_d">LED[D]</option>
+			<option value="led_e">LED[E]</option>
+		</select>
+	</div>
 　は、
-<div class="box_selection">
-	<select class="how_often_bunbo" name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">２回のうち</option>
-		<option value="3">３回のうち</option>
-		<option value="4">４回のうち</option>
-		<option value="5">５回のうち</option>
-		<option value="6">６回のうち</option>
-	</select>
+	<div class="box_selection">
+		<select class="how_often_bunbo" name="how_often_bunbo">
+			<option value="always">ずっと</option>
+			<option value="2">２回のうち</option>
+			<option value="3">３回のうち</option>
+			<option value="4">４回のうち</option>
+			<option value="5">５回のうち</option>
+			<option value="6">６回のうち</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="how_often_bunshi" name="how_often_bunshi">
+			<option value="1">１回</option>
+			<option value="2">２回</option>
+			<option value="3">３回</option>
+			<option value="4">４回</option>
+			<option value="5">５回</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="led_color" name="led_color">
+			<option value="off">オフ</option>
+			<option value="blue">青</option>
+			<option value="red">赤</option>
+			<option value="yellow">黄色</option>
+			<option value="green">緑色</option>
+			<option value="skyblue">水色</option>
+			<option value="white">白</option>
+		</select>
+	</div>
 </div>
 
-<div class="box_selection">
-	<select class="how_often_bunshi" name="how_often_bunshi">
-		<option value="1">１回</option>
-		<option value="2">２回</option>
-		<option value="3">３回</option>
-		<option value="4">４回</option>
-		<option value="5">５回</option>
-	</select>
-</div>
+<br/>
 
-<div class="box_selection">
-	<select class="led_color" name="led_color">
-		<option value="off">オフ</option>
-		<option value="blue">青</option>
-		<option value="red">赤</option>
-		<option value="yellow">黄色</option>
-		<option value="green">緑色</option>
-		<option value="skyblue">水色</option>
-		<option value="white">白</option>
-	</select>
+<div id="term2" class="form_container">
+	<div class="box_selection">
+		<select class="which_led" name="which_led">
+			<option value="led_a">LED[A]</option>
+			<option value="led_b">LED[B]</option>
+			<option value="led_c">LED[C]</option>
+			<option value="led_d">LED[D]</option>
+			<option value="led_e">LED[E]</option>
+		</select>
+	</div>
+　は、
+	<div class="box_selection">
+		<select class="how_often_bunbo" name="how_often_bunbo">
+			<option value="always">ずっと</option>
+			<option value="2">２回のうち</option>
+			<option value="3">３回のうち</option>
+			<option value="4">４回のうち</option>
+			<option value="5">５回のうち</option>
+			<option value="6">６回のうち</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="how_often_bunshi" name="how_often_bunshi">
+			<option value="1">１回</option>
+			<option value="2">２回</option>
+			<option value="3">３回</option>
+			<option value="4">４回</option>
+			<option value="5">５回</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="led_color" name="led_color">
+			<option value="off">オフ</option>
+			<option value="blue">青</option>
+			<option value="red">赤</option>
+			<option value="yellow">黄色</option>
+			<option value="green">緑色</option>
+			<option value="skyblue">水色</option>
+			<option value="white">白</option>
+		</select>
+	</div>
 </div>
 
 <a href="#"><img id="exe_btn" src="./img/button.gif" alt="送信する"></a>
 <!-- <input id="exe_btn" type="image" src="./img/button.gif"> -->
 
-</form>
 
 
-</div>
+
+
 
   <div id="stage"></div>
 	<script src="./assets/jquery-3.2.1.min.js"></script>
