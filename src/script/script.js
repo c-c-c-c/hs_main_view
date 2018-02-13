@@ -68,8 +68,8 @@ loader.load(modelPath, (geo, mat) => {
 	model_hs.material.opacity =0.01;
 	model_hs.material.transparent = true;
 
-	let p_geometry = new THREE.PlaneGeometry( 0.15, 0.2, 0.1 );
-
+	let p_geometry = new THREE.PlaneGeometry( 0.15, 0.1);
+	// p_geometry.rotation.y = (Math.PI) / 4  ;
 
 
 
@@ -80,9 +80,10 @@ loader.load(modelPath, (geo, mat) => {
 	for (let i=0;i < 5; i++) {
 		let p_material = new THREE.MeshBasicMaterial( { side: THREE.DoubleSide} );
 		plane[i] = new THREE.Mesh( p_geometry, p_material );
+	  plane[i].rotation.x = (Math.PI) / 2  ;
 
 		//平面の位置を少しずつずらす。
-		plane[i].position.z =0.13*i + 1.5;
+		plane[i].position.z =0.14*i + 1.5;
 		//画面に対する奥行き方向は変更なしで2
 		plane[i].position.y =1.6;
 
@@ -146,3 +147,18 @@ function main() {
 
   requestAnimationFrame(main);
 }
+
+
+$(function () {
+  $('#exe_btn').click(function() {
+    // 分母
+    console.log('分母：');
+    console.log($('.how_often_bunbo').val());  // 結果：山田太郎
+
+    // 分子
+    console.log('分子：');
+    console.log($('.how_often_bunshi').val());  // 結果：山田太郎
+
+
+  })
+});

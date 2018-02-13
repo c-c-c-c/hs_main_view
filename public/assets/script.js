@@ -67,7 +67,9 @@ loader.load(modelPath, function (geo, mat) {
 	model_hs.material.opacity = 0.01;
 	model_hs.material.transparent = true;
 
-	var p_geometry = new THREE.PlaneGeometry(0.15, 0.2, 0.1);
+	var p_geometry = new THREE.PlaneGeometry(0.15, 0.1);
+	// p_geometry.rotation.y = (Math.PI) / 4  ;
+
 
 	// ハンドスピナーとLEDライト５個をグループに
 	// let hsGeoGruoup = new THREE.Group();
@@ -76,9 +78,10 @@ loader.load(modelPath, function (geo, mat) {
 	for (var i = 0; i < 5; i++) {
 		var p_material = new THREE.MeshBasicMaterial({ side: THREE.DoubleSide });
 		plane[i] = new THREE.Mesh(p_geometry, p_material);
+		plane[i].rotation.x = Math.PI / 2;
 
 		//平面の位置を少しずつずらす。
-		plane[i].position.z = 0.13 * i + 1.5;
+		plane[i].position.z = 0.14 * i + 1.5;
 		//画面に対する奥行き方向は変更なしで2
 		plane[i].position.y = 1.6;
 
@@ -138,4 +141,17 @@ function main() {
 
 	requestAnimationFrame(main);
 }
+
+$(function () {
+	$('#exe_btn').click(function () {
+		// 分母
+		console.log('分母：');
+		console.log($('.how_often_bunbo').val()); // 結果：山田太郎
+
+		// 分子
+		console.log('分子：');
+		console.log($('.how_often_bunshi').val()); // 結果：山田太郎
+
+	});
+});
 //# sourceMappingURL=script.js.map

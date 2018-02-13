@@ -3,12 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>god flag Practice</title>
+		<style type="text/css">
+		input, button, textarea, select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			outline: none;
+		}
+
+
+
+		.box_selection select {
+		 border: 0;
+		 color: #EEE;
+		 background: transparent;
+		 font-size: 20px;
+		 font-weight: bold;
+		 padding: 2px 10px;
+		 // width: 128px;
+		 // *width: 100px;
+		 width: 138px;
+		 *width: 130px;
+		 *background: #58B14C;
+		 -webkit-appearance: none;
+		}
+
+		.box_selection {
+		 overflow:hidden;
+		 width:130px;
+		 -moz-border-radius: 15px 15px 15px 15px;
+		 -webkit-border-radius: 15px 15px 15px 15px;
+		 border-radius: 15px 15px 15px 15px;
+		 // box-shadow: 1px 1px 11px #330033;
+		 background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 100px center;
+		}
+
+		.form_container {
+			display:flex;
+		}
+
+
+
+
+		</style>
+
+
 </head>
 
 <body>
-test
+testaa
 
-<form name="form1" class="term1" action="">
+
+<form id="term1">
+<div class="form_container">
+<div class="box_selection">
 	<select name="which_led">
 		<option value="led_a">LED[A]</option>
 		<option value="led_b">LED[B]</option>
@@ -16,8 +64,10 @@ test
 		<option value="led_d">LED[D]</option>
 		<option value="led_e">LED[E]</option>
 	</select>
+</div>
 　は、
-	<select name="how_often_bunbo">
+<div class="box_selection">
+	<select class="how_often_bunbo" name="how_often_bunbo">
 		<option value="always">ずっと</option>
 		<option value="2">２回のうち</option>
 		<option value="3">３回のうち</option>
@@ -25,17 +75,20 @@ test
 		<option value="5">５回のうち</option>
 		<option value="6">６回のうち</option>
 	</select>
+</div>
 
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">１回</option>
-		<option value="3">２回</option>
-		<option value="4">３回</option>
-		<option value="5">４回</option>
-		<option value="6">５回</option>
+<div class="box_selection">
+	<select class="how_often_bunshi" name="how_often_bunshi">
+		<option value="1">１回</option>
+		<option value="2">２回</option>
+		<option value="3">３回</option>
+		<option value="4">４回</option>
+		<option value="5">５回</option>
 	</select>
+</div>
 
-	<select name="how_often_bunbo">
+<div class="box_selection">
+	<select class="led_color" name="led_color">
 		<option value="off">オフ</option>
 		<option value="blue">青</option>
 		<option value="red">赤</option>
@@ -44,133 +97,18 @@ test
 		<option value="skyblue">水色</option>
 		<option value="white">白</option>
 	</select>
+</div>
+
+<a href="#"><img id="exe_btn" src="./img/button.gif" alt="送信する"></a>
+<!-- <input id="exe_btn" type="image" src="./img/button.gif"> -->
+
 </form>
-	<input type="button" value="ライト変更" onclick="onButtonClick();" />
-</form><br>
-
-<form name="form1" class="term1" action="">
-	<select name="which_led">
-		<option value="led_a">LED[A]</option>
-		<option value="led_b">LED[B]</option>
-		<option value="led_c">LED[C]</option>
-		<option value="led_d">LED[D]</option>
-		<option value="led_e">LED[E]</option>
-	</select>
-　は、
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">２回のうち</option>
-		<option value="3">３回のうち</option>
-		<option value="4">４回のうち</option>
-		<option value="5">５回のうち</option>
-		<option value="6">６回のうち</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">１回</option>
-		<option value="3">２回</option>
-		<option value="4">３回</option>
-		<option value="5">４回</option>
-		<option value="6">５回</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="off">オフ</option>
-		<option value="blue">青</option>
-		<option value="red">赤</option>
-		<option value="yellow">黄色</option>
-		<option value="green">緑色</option>
-		<option value="skyblue">水色</option>
-		<option value="white">白</option>
-	</select>
-</form>
-	<input type="button" value="ライト変更" onclick="onButtonClick();" />
-</form><br>
 
 
-<form name="form1" class="term1" action="">
-	<select name="which_led">
-		<option value="led_a">LED[A]</option>
-		<option value="led_b">LED[B]</option>
-		<option value="led_c">LED[C]</option>
-		<option value="led_d">LED[D]</option>
-		<option value="led_e">LED[E]</option>
-	</select>
-　は、
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">２回のうち</option>
-		<option value="3">３回のうち</option>
-		<option value="4">４回のうち</option>
-		<option value="5">５回のうち</option>
-		<option value="6">６回のうち</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">１回</option>
-		<option value="3">２回</option>
-		<option value="4">３回</option>
-		<option value="5">４回</option>
-		<option value="6">５回</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="off">オフ</option>
-		<option value="blue">青</option>
-		<option value="red">赤</option>
-		<option value="yellow">黄色</option>
-		<option value="green">緑色</option>
-		<option value="skyblue">水色</option>
-		<option value="white">白</option>
-	</select>
-</form>
-	<input type="button" value="ライト変更" onclick="onButtonClick();" />
-</form><br>
-
-
-<form name="form1" class="term1" action="">
-	<select name="which_led">
-		<option value="led_a">LED[A]</option>
-		<option value="led_b">LED[B]</option>
-		<option value="led_c">LED[C]</option>
-		<option value="led_d">LED[D]</option>
-		<option value="led_e">LED[E]</option>
-	</select>
-　は、
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">２回のうち</option>
-		<option value="3">３回のうち</option>
-		<option value="4">４回のうち</option>
-		<option value="5">５回のうち</option>
-		<option value="6">６回のうち</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="always">ずっと</option>
-		<option value="2">１回</option>
-		<option value="3">２回</option>
-		<option value="4">３回</option>
-		<option value="5">４回</option>
-		<option value="6">５回</option>
-	</select>
-
-	<select name="how_often_bunbo">
-		<option value="off">オフ</option>
-		<option value="blue">青</option>
-		<option value="red">赤</option>
-		<option value="yellow">黄色</option>
-		<option value="green">緑色</option>
-		<option value="skyblue">水色</option>
-		<option value="white">白</option>
-	</select>
-</form>
-	<input type="button" value="ライト変更" onclick="onButtonClick();" />
-</form><br>
+</div>
 
   <div id="stage"></div>
+	<script src="./assets/jquery-3.2.1.min.js"></script>
   <script src="./assets/vue.js"></script>
   <script src='./assets/three.min.js'></script>
   <script src='./assets/OrbitControls.js'></script>
