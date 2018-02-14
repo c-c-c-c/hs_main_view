@@ -58,31 +58,31 @@ let termsTree = {
 		ledNo : 1,
 		oftenBunbo : 1,
 		oftenBunshi: 1,
-		ledColor : 'skyblue'
+		ledColor : 'red'
 	},
 	term2 : {
 		ledNo : 2,
 		oftenBunbo : 1,
 		oftenBunshi: 1,
-		ledColor : 'yellow'
+		ledColor : 'blue'
 	},
 	term3 : {
 		ledNo : 3,
-		oftenBunbo : 1,
+		oftenBunbo : 2,
 		oftenBunshi: 1,
-		ledColor : 'green'
+		ledColor : 'red'
 	},
 	term4 : {
 		ledNo : 4,
 		oftenBunbo : 1,
 		oftenBunshi: 1,
-		ledColor : 'red'
+		ledColor : 'blue'
 	},
 	term5 : {
 		ledNo : 5,
-		oftenBunbo : 1,
-		oftenBunshi: 1,
-		ledColor : 'pink'
+		oftenBunbo : 6,
+		oftenBunshi: 3,
+		ledColor : 'green'
 	}
 }
 
