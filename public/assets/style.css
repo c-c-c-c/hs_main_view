@@ -511,3 +511,7 @@ textarea,
  */
 [aria-disabled] {
   cursor: default; }
+
+body {
+  width: 700px;
+  margin: auto; }
