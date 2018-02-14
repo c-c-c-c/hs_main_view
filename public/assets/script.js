@@ -1,7 +1,7 @@
 'use strict';
 
-var WIDTH = 800;
-var HEIGHT = 600;
+var WIDTH = 500;
+var HEIGHT = 500;
 var c_radian = 0;
 var r_radian = 0;
 var light = void 0;
@@ -157,7 +157,7 @@ var render_count = 0;
 function main() {
 
 	//cameraの位置を設定
-	camera.position.set(0, 7, 0);
+	camera.position.set(0, 6, 0);
 	camera.lookAt({ x: 0, y: 0, z: 0 });
 
 	//hsGeoGruoup.rotation.y += 0.23 ;
