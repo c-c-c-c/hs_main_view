@@ -42,32 +42,31 @@
 			display:flex;
 		}
 
-
-
-
 		</style>
 
 
 </head>
 
 <body>
-testaa
 
+<!-- ここに描画される -->
+<div id="stage"></div>
+<!-- ここまで -->
 
 <div id="term1" class="form_container">
 	<div class="box_selection">
 		<select class="which_led" name="which_led">
-			<option value="led_a">LED[A]</option>
-			<option value="led_b">LED[B]</option>
-			<option value="led_c">LED[C]</option>
-			<option value="led_d">LED[D]</option>
-			<option value="led_e">LED[E]</option>
+			<option value="1">LED[A]</option>
+			<option value="2">LED[B]</option>
+			<option value="3">LED[C]</option>
+			<option value="4">LED[D]</option>
+			<option value="5">LED[E]</option>
 		</select>
 	</div>
 　は、
 	<div class="box_selection">
 		<select class="how_often_bunbo" name="how_often_bunbo">
-			<option value="always">ずっと</option>
+			<option value="1">ずっと</option>
 			<option value="2">２回のうち</option>
 			<option value="3">３回のうち</option>
 			<option value="4">４回のうち</option>
@@ -87,7 +86,7 @@ testaa
 	</div>
 
 	<div class="box_selection">
-		<select class="led_color" name="led_color">
+		<select class="which_color" name="which_color">
 			<option value="off">オフ</option>
 			<option value="blue">青</option>
 			<option value="red">赤</option>
@@ -104,17 +103,17 @@ testaa
 <div id="term2" class="form_container">
 	<div class="box_selection">
 		<select class="which_led" name="which_led">
-			<option value="led_a">LED[A]</option>
-			<option value="led_b">LED[B]</option>
-			<option value="led_c">LED[C]</option>
-			<option value="led_d">LED[D]</option>
-			<option value="led_e">LED[E]</option>
+			<option value="1">LED[A]</option>
+			<option value="2">LED[B]</option>
+			<option value="3">LED[C]</option>
+			<option value="4">LED[D]</option>
+			<option value="5">LED[E]</option>
 		</select>
 	</div>
 　は、
 	<div class="box_selection">
 		<select class="how_often_bunbo" name="how_often_bunbo">
-			<option value="always">ずっと</option>
+			<option value="1">ずっと</option>
 			<option value="2">２回のうち</option>
 			<option value="3">３回のうち</option>
 			<option value="4">４回のうち</option>
@@ -134,8 +133,8 @@ testaa
 	</div>
 
 	<div class="box_selection">
-		<select class="led_color" name="led_color">
-			<option value="off">オフ</option>
+		<select class="which_color" name="which_color">
+			<option value="black">オフ</option>
 			<option value="blue">青</option>
 			<option value="red">赤</option>
 			<option value="yellow">黄色</option>
@@ -146,7 +145,156 @@ testaa
 	</div>
 </div>
 
+<br>
+
+
+<div id="term3" class="form_container">
+	<div class="box_selection">
+		<select class="which_led" name="which_led">
+			<option value="1">LED[A]</option>
+			<option value="2">LED[B]</option>
+			<option value="3">LED[C]</option>
+			<option value="4">LED[D]</option>
+			<option value="5">LED[E]</option>
+		</select>
+	</div>
+　は、
+	<div class="box_selection">
+		<select class="how_often_bunbo" name="how_often_bunbo">
+			<option value="1">ずっと</option>
+			<option value="2">２回のうち</option>
+			<option value="3">３回のうち</option>
+			<option value="4">４回のうち</option>
+			<option value="5">５回のうち</option>
+			<option value="6">６回のうち</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="how_often_bunshi" name="how_often_bunshi">
+			<option value="1">１回</option>
+			<option value="2">２回</option>
+			<option value="3">３回</option>
+			<option value="4">４回</option>
+			<option value="5">５回</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="which_color" name="which_color">
+			<option value="black">オフ</option>
+			<option value="blue">青</option>
+			<option value="red">赤</option>
+			<option value="yellow">黄色</option>
+			<option value="green">緑色</option>
+			<option value="skyblue">水色</option>
+			<option value="white">白</option>
+		</select>
+	</div>
+</div>
+
+<br>
+
+
+<div id="term4" class="form_container">
+	<div class="box_selection">
+		<select class="which_led" name="which_led">
+			<option value="1">LED[A]</option>
+			<option value="2">LED[B]</option>
+			<option value="3">LED[C]</option>
+			<option value="4">LED[D]</option>
+			<option value="5">LED[E]</option>
+		</select>
+	</div>
+　は、
+	<div class="box_selection">
+		<select class="how_often_bunbo" name="how_often_bunbo">
+			<option value="1">ずっと</option>
+			<option value="2">２回のうち</option>
+			<option value="3">３回のうち</option>
+			<option value="4">４回のうち</option>
+			<option value="5">５回のうち</option>
+			<option value="6">６回のうち</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="how_often_bunshi" name="how_often_bunshi">
+			<option value="1">１回</option>
+			<option value="2">２回</option>
+			<option value="3">３回</option>
+			<option value="4">４回</option>
+			<option value="5">５回</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="which_color" name="which_color">
+			<option value="black">オフ</option>
+			<option value="blue">青</option>
+			<option value="red">赤</option>
+			<option value="yellow">黄色</option>
+			<option value="green">緑色</option>
+			<option value="skyblue">水色</option>
+			<option value="white">白</option>
+		</select>
+	</div>
+</div>
+
+<br>
+
+
+<div id="term5" class="form_container">
+	<div class="box_selection">
+		<select class="which_led" name="which_led">
+			<option value="1">LED[A]</option>
+			<option value="2">LED[B]</option>
+			<option value="3">LED[C]</option>
+			<option value="4">LED[D]</option>
+			<option value="5">LED[E]</option>
+		</select>
+	</div>
+　は、
+	<div class="box_selection">
+		<select class="how_often_bunbo" name="how_often_bunbo">
+			<option value="1">ずっと</option>
+			<option value="2">２回のうち</option>
+			<option value="3">３回のうち</option>
+			<option value="4">４回のうち</option>
+			<option value="5">５回のうち</option>
+			<option value="6">６回のうち</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="how_often_bunshi" name="how_often_bunshi">
+			<option value="1">１回</option>
+			<option value="2">２回</option>
+			<option value="3">３回</option>
+			<option value="4">４回</option>
+			<option value="5">５回</option>
+		</select>
+	</div>
+
+	<div class="box_selection">
+		<select class="which_color" name="which_color">
+			<option value="black">オフ</option>
+			<option value="blue">青</option>
+			<option value="red">赤</option>
+			<option value="yellow">黄色</option>
+			<option value="green">緑色</option>
+			<option value="skyblue">水色</option>
+			<option value="white">白</option>
+		</select>
+	</div>
+</div>
+
+<br>
+
+
+
 <a href="#"><img id="exe_btn" src="./img/button.gif" alt="送信する"></a>
+<br>
 <!-- <input id="exe_btn" type="image" src="./img/button.gif"> -->
 
 
@@ -154,7 +302,7 @@ testaa
 
 
 
-  <div id="stage"></div>
+
 	<script src="./assets/jquery-3.2.1.min.js"></script>
   <script src="./assets/vue.js"></script>
   <script src='./assets/three.min.js'></script>
